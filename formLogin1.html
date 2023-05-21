@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link rel="stylesheet" href="formLogin.css" />
+
+        <!-- ? jQuery -->
+        <script
+        src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+        crossorigin="anonymous"
+      ></script>
+  </head>
+  <body>
+    <div class="loader">
+      <img src="imgs//816.svg" alt="">
+    </div>
+    <main class="content">
+      <div class="box">
+        <div class="inner-box">
+          <div class="forms-wrap">
+            <form  class="sign-in-form" method="POST" action="{{ route('login') }}">
+              @csrf
+              <div class="logo">
+                <img src="./imgs/iconagri.png" alt="" />
+                <h4>Gestion Agricole</h4>
+              </div>
+              <div class="heading">
+                <h2>Welcome Back</h2>
+                <h6>Not Registered ?</h6>
+                <a href="" class="toggle">Sign Up</a>
+              </div>
+
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input
+                    type="email"
+                    id="email"
+                    class="input-field @error('email') is-invalid @enderror"
+                    name="email" 
+                    value="{{ old('email') }}"
+                    required 
+                    autocomplete="email" 
+                    autofocus
+                    
+                  />
+                  <label for="email">E-mail</label>
+                  @error('email')
+                  <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+                <div class="input-wrap">
+                  <input
+                    type="password"
+                    id="password"
+                    minlength="4"
+                    class="input-field @error('password') is-invalid @enderror"
+                    name="password" 
+                    required 
+                    autocomplete="current-password"
+                  />
+                  <label for="">Password</label>
+                  @error('password')
+                  <span class="invalid-feedback" role="alert">
+                   <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+                <input type="submit" value="Submit" class="sign-btn" />
+                <p class="text">
+                  Forgot Password ? <a href="Get Help"></a> Signing In
+                </p>
+              </div>
+            </form>
+
+            <form
+              action="formLogin1.html"
+              autocomplete="off"
+              class="sign-up-form"
+            >
+              <div class="logo">
+                <img src="./imgs/iconagri.png" alt="logo" />
+                <h4>G-Agricole</h4>
+              </div>
+
+              <div class="heading">
+                <h2>Get Started</h2>
+                <h6>Already Have an Account ?</h6>
+                <a href="#" class="toggle">Sign In</a>
+              </div>
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    minlength="4"
+                    autocomplete="off"
+                    class="input-field"
+                    required
+                  />
+                  <label for="">Name</label>
+                </div>
+                <div class="input-wrap">
+                  <input
+                    type="email"
+                    name=""
+                    id=""
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label for="">Email</label>
+                </div>
+                <div class="input-wrap">
+                  <input
+                    type="password"
+                    name=""
+                    id=""
+                    minlength="4"
+                    autocomplete="off"
+                    class="input-field"
+                  />
+                  <label for="">Password</label>
+                </div>
+                <input type="submit" value="Sign Up" class="sign-btn" id="signup"/>
+                <p class="text">
+                   I agree to the
+                  <a href="#">Terms and Conditions</a> and
+                  <a href="#">Privacy and Policy </a>
+                  <div class="checkbox-wrapper-12">
+                    <div class="cbx">
+                      <input id="cbx-12" type="checkbox">
+                      <label for="cbx-12"></label>
+                      <svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+                        <path d="M2 8.36364L6.23077 12L13 2"></path>
+                      </svg>
+                    </div>
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                      <defs>
+                        <filter id="goo-12">
+                          <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"></feGaussianBlur>
+                          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -7" result="goo-12"></feColorMatrix>
+                          <feBlend in="SourceGraphic" in2="goo-12"></feBlend>
+                        </filter>
+                      </defs>
+                    </svg>
+                  </div>
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <div class="carousel">
+            <div class="images-wrapper">
+              <img
+                src="./imgs/gif3businees.svg"
+                class="image img-1 show"
+                alt=""
+              />
+              <img
+                src="./imgs/gif2business.svg"
+                class="image img-2"
+                alt=""
+              />
+              <img
+                src="./imgs/gif1.svg"
+                class="image img-3"
+                alt=""
+              />
+            </div>
+                      <div class="text-slider">
+            <div class="text-wrap">
+              <div class="text-group">
+                <h2>Organiser Vos Parcelles</h2>
+                <h2>Ameliorer Vos Profits</h2>
+                <h2>Gestionner vos employés</h2>
+              </div>
+            </div>
+
+            <div class="bullets">
+              <span class="active" data-value="1"></span>
+              <span data-value="2"></span>
+              <span data-value="3"></span>
+            </div>
+          </div>
+
+
+          </div>
+        </div>
+      </div>
+    </main>
+<script>
+
+  // ? pre loader:
+  $(document).ready(function() {
+  setTimeout(function() {
+    $(".loader").fadeOut("smooth", function() {
+      $(".content").fadeIn("smooth");
+    });
+  },500);
+});
+
+</script>
+
+    <script src="formLogin.js"></script>
+  </body>
+</html>
