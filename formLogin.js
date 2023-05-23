@@ -5,15 +5,7 @@ const bullets = document.querySelectorAll('.bullets span');
 const images= document.querySelectorAll('.image');
 
 
-inputs.forEach((inp) =>{
-inp.addEventListener('focus',() =>{
-    inp.classList.add("active");
-});
-inp.addEventListener("blur",() =>{
-if(inp.value !== '') return;
-inp.classList.remove("active");
-});
-});
+
 
 toggle_btn.forEach((btn) =>{
     btn.addEventListener('click', (e) =>{
@@ -26,28 +18,6 @@ toggle_btn.forEach((btn) =>{
 
 
 
-// function moveSlider(){
-//     let index = this.dataset.value;
-
-//     let currentImage = document.querySelector(`.img-${index}`);
-//     images.forEach((img) =>{
-//         img.classList.remove('show');
-//     });
-//     currentImage.classList.add('show');
-
-//     const textSlider = document.querySelector('.text-group');
-//     textSlider.style.transform = `translateY(${-(index - 1) * 2.2}rem)`;
-
-//     bullets.forEach((bull) =>{
-// bull.classList.remove("active");
-//     });
-//     this.classList.add("active");
-
-// }
-
-// bullets.forEach((bullet) =>{
-//     bullet.addEventListener("click", moveSlider);
-// })
 
 
 
@@ -73,7 +43,7 @@ function moveSlider() {
     const nextBullet = this.nextElementSibling || bullets[0]; // Get the next sibling or the first bullet
     setTimeout(function() {
       nextBullet.click(); // Simulate a click on the next bullet element
-    }, 2000); // Wait for 3 seconds before moving to the next slide
+    }, 3000); // Wait for 3 seconds before moving to the next slide
   }
   
   bullets.forEach((bullet) => {
